@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Loan repayment Predictor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static', filename='assets/css/main.css')}}" />
+		<link  rel="icon" href="{{url_for('static', filename='images/icon.png')}}" />
+	</head>
+	<body class="is-preload" style="font-family: sans-serif; background-color: pink;">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header" class="container">
+
+					<!-- Logo -->
+						<div>
+						<center><h2 style="color: white;background-color: black;">LOAN REPAYMENT PREDICTOR</h2></center>
+
+					
+			
+
+			<!-- Banner -->
+				<section class="wrapper style1" id="banner">
+					<div class="container"><header>
+						
+					</header></div>
+				</section>
+
+			<!-- Highlights -->
+		
+					<hr>
+				<!-- Gigantic Heading -->
+				<section class="wrapper style2" id="predict">
+					<div class="container">
+						<header class="major">
+							<h2 style="background-color: black; color: white;">Fill the form with borrower's details to predict repayment</h2>
+
+							
+							
+						</header>
+					</div>
+					<section id="main" class="container medium">
+					
+					<div style="background-color:pink;" class="box">
+						<form style="position: relative; text-align: center;" method="POST" action="{{url_for('index')}}">
+							
+								
+								<div class="arrow col-6 col-6-mobilep">
+								Meet Credit policy</br>
+									
+							    <select name="credit_policy" id="credit_policy" required>
+							    	<option value=""> Choose </option>
+							        <option value="1">Yes</option>
+							        <option value="0">No</option>
+							       
+							    </select>
+								</div>
+								<div class="arrow col-6 col-6-mobilep">
+								Purpose</br>
+									
+							    <select name="purpose" id="purpose" required>
+							    	<option value=""> Choose </option>
+							        <option value="credit_card">Credit card</option>
+							        <option value="debt_consolidation">Debt Consolidation</option>
+							        <option value="educational">Educational</option>
+							        <option value="major_purchase">Major Purchase</option>
+							        <option value="small_business">Small Business</option>
+							        <option value="all_other">Others</option>
+							    </select>
+								</div>
+
+								<div class="col-6 col-6-mobilep">
+								Interest rate(in %)</br>
+									
+							   
+							    	<input type="number" name="int_rate" step="any" min=6 max="20" value="" placeholder=" 6 to 20" required/>
+							   
+								</div>
+								<div class="col-6 col-6-mobilep">
+								Monthly Installments($)</br>
+									
+							   
+							    	<input type="number" name="installment" step="any" min=16 max="940" value="" placeholder=" 16 to 940" required/>
+							   
+								</div>
+
+								<div class="col-6 col-6-mobilep">
+								Annual Income($)</br>
+									
+							    
+							    	<input type="number" name="log_annual_inc" step="any" min=2000 max="2000000" value="" placeholder=" 2000 to 2000000" required/>
+							    
+								</div>
+								<div class="col-6 col-6-mobilep">
+								Debt to income ratio</br>
+							    	<input type="number" name="dti" step="any" min="0.0" max="29.0" value="" placeholder=" 0.0 to 29.0" required/>
+								</div>
+								<div class="col-6 col-6-mobilep">
+								FICO Credit Score</br>
+							    	<input type="number" name="fico" step="any" min="612" max="827" value="" placeholder=" 612 to 827" required/>
+								</div>
+								<div class="col-6 col-6-mobilep">
+								Days with credit line</br>
+							    	<input type="number" name="days_with_cr_line" step="any" min="180" max="17600" value="" placeholder=" 180 to 17600" required/>
+								</div>
+								<div class="col-6 col-6-mobilep">
+								Revolving Balance($)</br>
+							    	<input type="number" name="revol_bal" step="any" min="0" max="1200000" value="" placeholder=" 0 to 1200000" required/>
+								</div>
+								<div class="col-6 col-12-mobilep">
+								 Revolving line utilization rate</br>
+									 <input type="number" name="revol_util" step="any" min="0" max="119" value="" placeholder=" 0 to 119" required/>
+								</div>
+								<div class="col-6 col-12-mobilep">
+								Number of inquiries by creditors in the last 6 months</br>
+							    	<input type="number" name="inq_last_6mths" step="any" min="0" max="33" value="" placeholder=" 0 to 33" required/>
+								</div>
+								<div class="col-6 col-6-mobilep">
+								No. of time with 30+ days past due on a payment in the past 2 years</br>
+							    	<input type="number" name="delinq_2yrs" step="any" min="0" max="13" value="" placeholder=" 0 to 13" required/>
+								</div>
+								
+								<div class="col-6 col-6-mobilep">
+								No. of derogatory public records</br>
+							    <input type="number" name="pub_rec" step="any" min="0" max="5" value="" placeholder=" 0 to 5" required/>
+								</div>
+							
+							
+								<div class="col-12">
+									<ul class="actions special">
+										<li><input type="submit" value="Predict Repayment" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+				</section>
+
+
+				</section>
+				
+
+
+			<!-- Posts -->
+				
+			<!-- Footer -->
+				<div style="background-color: #d3d4e0;" id="footer">
+					
+
+					
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy;   All rights reserved</li>
+							</ul>
+						</div>
+
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='assets/js/jquery.dropotron.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+		</body>
+</html>
